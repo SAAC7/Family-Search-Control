@@ -1,8 +1,14 @@
+package com.ab7ec.backend;
+
+import io.javalin.Javalin;
+
+
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
 
-package com.ab7ec.backend;
+
 
 /**
  *
@@ -11,6 +17,8 @@ package com.ab7ec.backend;
 public class Backend {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        Javalin app_port = Javalin.create(config -> {
+        }).start(7000);
+        UserController.registerEndpoints(app);
     }
 }
